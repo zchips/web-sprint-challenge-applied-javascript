@@ -65,5 +65,12 @@ JavaScript provides a built-in mechanism for handling events called the "event l
 
 
 3. What is an event listener?
+
+An event listener is a function that waits for a specific event to occur and then executes a set of instructions in response to that event. In web development, event listeners are often used with JavaScript to create interactive and dynamic web pages.
 4. Why would we convert a NodeList into an Array?
+While NodeList objects are similar to arrays in that they contain an ordered collection of elements, they are not actual arrays and do not have all the same properties and methods as arrays. For example, you cannot use methods like map(), filter(), or reduce() directly on a NodeList.
 5. What is a component?
+A reusable and modular piece of code that adds functionality to a web page.
+
+
+
