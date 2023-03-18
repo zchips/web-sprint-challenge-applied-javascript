@@ -49,6 +49,12 @@ const headerAppender = (selector) => {
   // We are taking care of passing in the correct selector on line 16,
   // so all that you need to do is pass it into the querySelector method
   // for the tests to work!
+const e = document.querySelector(selector)
+let head = Header('Lambda Times', 'March 18, 2023', '44F')
+e.appendChild(head)
+
+
+
 }
 
 export { Header, headerAppender }
