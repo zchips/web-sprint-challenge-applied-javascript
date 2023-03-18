@@ -58,7 +58,12 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 Demonstrate your understanding of this sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
 1. What is the DOM?
+
+The DOM is platform and language-neutral, and is a critical component of web development, allowing developers to create dynamic, interactive web applications.
 2. What is an event?
+JavaScript provides a built-in mechanism for handling events called the "event listener". An event listener is a function that is registered with an HTML element to be notified when a specific event occurs on that element. For example, you can add an event listener to a button element to execute a function when the button is clicked.
+
+
 3. What is an event listener?
 4. Why would we convert a NodeList into an Array?
 5. What is a component?

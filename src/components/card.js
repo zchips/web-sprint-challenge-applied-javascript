@@ -1,3 +1,6 @@
+import axios from "axios"
+import { response } from "msw"
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -17,6 +20,36 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+
+
+const articleWrap = document.createElement('div')
+const headline = document.createElement('div')
+const author = document.createElement('div')
+const iCon = document.createElement('div')
+const iAut = document.createElement('img')
+const aName = document.createElement('span')
+
+articleWrap.classList.add('card')
+headline.classList.add('headline')
+author.classList.add('author')
+iCon.classList.add('img-container')
+
+headline.textContent = article.headline
+aName.textContent = `${article.authorName}`
+iAut.src = article.authorPhoto
+
+articleWrap.appendChild(headline)
+articleWrap.appendChild(author)
+author.appendChild(iCon)
+author.appendChild(aName)
+iCon.appendChild(iAut)
+
+articleWrap.addEventListener('click', ()=>{
+    console.log(headline.textContent)
+})
+
+return articleWrap
+
 }
 
 const cardAppender = (selector) => {
@@ -28,6 +61,17 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+
+axios.get(`http://localhost:5001/api/articles`).then(response =>{
+  for (const key in response.data.articles){
+    response.data.articles[key].forEach(article=>{
+      const newCard = Card(article)
+      document.querySelector(selector).appendChild(newCard)
+    })
+  }
+})
+
+
 }
 
 export { Card, cardAppender }
